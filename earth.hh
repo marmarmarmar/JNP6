@@ -1,4 +1,9 @@
 #include "planet.hh"
 
-class Earth public Planet;
-Earth& earth(void);
+template <typename CitizenType>
+class Planet : public PlanetInterface {
+
+  private :
+  Planet();
+  map <CitizenPlanetaryId, CitizenType> list_of_citizens;
+};
