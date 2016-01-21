@@ -17,3 +17,7 @@ const CitizenName& name(void) {
 const CitizenName& id(void) {
   return my_id;
 }
+
+int main(void) {
+  return 0;
+}

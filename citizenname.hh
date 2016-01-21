@@ -3,22 +3,24 @@
 
 class CitizenName {
   public:
-    ~CitizenName(void);
+    virtual ~CitizenName(void) = 0;
 };
-
-CitizenName::~CitizenName(void) { }
 
 class CitizenNameNormal : public CitizenName {
   protected:
     std::string my_name;
   public:
+    ~CitizenNameNormal(void);
+    CitizenNameNormal(const std::string&);
+    CitizenNameNormal(void);
     friend std::ostream& operator<<(
         std::ostream&,
         const CitizenNameNormal&);
-    CitizenNameNormal(const std::string&);
 };
 
 class CitizenNameEmpty : public CitizenName {
+  public:
+    ~CitizenNameEmpty(void);
     friend std::ostream& operator<<(
         std::ostream&,
         const CitizenNameEmpty&);
@@ -26,6 +28,7 @@ class CitizenNameEmpty : public CitizenName {
 
 class CitizenNameBinar : public CitizenNameNormal {
   public:
+    ~CitizenNameBinar(void);
     friend std::ostream& operator<<(
         std::ostream&,
         const CitizenNameBinar&);
