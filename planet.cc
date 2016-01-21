@@ -1,7 +1,10 @@
 #include "planet.hh"
 
+Planet<CitizenType>::~Planet(void) {};
+
 template <typename CitizenType>
-const CitizenType&Planet<CitizenType>::registerCitizen(
+template <typename T>
+const CitizenType& Planet<CitizenType>::registerCitizen(
     const std::string& name) {
   auto helper_iterator = list_of_citizens.insert(
       std::pair<CitizenID, CitizenType>(
@@ -18,4 +21,11 @@ const CitizenType& Planet<CitizenType>::findCitizen(
     return helper_iterator->second;
   else
     throw NoCitizenError;
+}
+
+template <typename CitizenType>
+template <typename T>
+const CitizenType& Planet<CitizenType>::findCitizen(
+    const T& id_we_look_for) {
+  throw NoCitizenError;
 }

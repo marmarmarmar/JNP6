@@ -10,10 +10,10 @@ Citizen::Citizen(
   my_id(citizen_id),
   name(CitizenNameNormal(citizen_name)) { };
 
-const CitizenName& getName(void) {
-  return citizen_name;
+const CitizenName& name(void) {
+  return my_name;
 }
 
-const CitizenName& getID(void) {
-  return citizen_id;
+const CitizenName& id(void) {
+  return my_id;
 }

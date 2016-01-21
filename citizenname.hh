@@ -1,27 +1,33 @@
 #include <iostream>
 #include <string>
 
-class CitizenNameInterface {
+class CitizenName {
   public:
-    ~CitizenNameInterface(void);
-    virtual friend ostream& operator<<(
-        std::ostream&,
-        const CitizenNameInterface&) = 0;
-}
+    ~CitizenName(void);
+};
 
-CitizenNameInterface::~CitizenNameInterface(void) { }
+CitizenName::~CitizenName(void) { }
 
-class CitizenNameNormal : public CitizenNameInterface {
+class CitizenNameNormal : public CitizenName {
   protected:
     std::string my_name;
   public:
+    friend std::ostream& operator<<(
+        std::ostream&,
+        const CitizenNameNormal&);
     CitizenNameNormal(const std::string&);
 };
 
-class CitizenNameEmpty : public CitizenNameInterface {
+class CitizenNameEmpty : public CitizenName {
+    friend std::ostream& operator<<(
+        std::ostream&,
+        const CitizenNameEmpty&);
 };
 
 class CitizenNameBinar : public CitizenNameNormal {
   public:
-    CitizenNameBinar(const CitizenName&, const CitizenName&);
+    friend std::ostream& operator<<(
+        std::ostream&,
+        const CitizenNameBinar&);
+    CitizenNameBinar(const CitizenNameBinar&, const CitizenNameBinar&);
 };

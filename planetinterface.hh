@@ -1,17 +1,25 @@
+#ifndef __PLANETINTERFACE_HH__
+
+#define __PLANETINTERFACE_HH__
+
+#include "citizen.hh"
+
+class Citizen;
+
 class PlanetInterface {
 
   public :
   
   typedef long long CitizenID;
 
-  virtual ~Planet(void) = 0; 
-  virtual const Citizen& registerCitizen(const std::string&) = 0;
-  virtual const Citizen& findCitizen(const CitizenID&) const = 0;
+  PlanetInterface(void);
+  virtual ~PlanetInterface(void) = 0; 
 
   protected:
 
-  static Citizen_ID currently_checked_id = 0;
+  static CitizenID currently_checked_id;
 };
 
-Planet::~Planet(void) {
-}
+typedef PlanetInterface::CitizenID CitizenId;
+
+#endif /* __PLANETINTERFACE_HH__ */
