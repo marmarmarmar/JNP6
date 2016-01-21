@@ -4,8 +4,6 @@ template <typename CitizenType>
 class PlanetBinary : public Planet<CitizenType> {
 
   public:
-  virtual const Citizen& registerCitizen(
-      const Citizen&, const Citizen&);
+  virtual const CitizenType& registerCitizen(
+      const CitizenType&, const CitizenType&);
 };
-
-const PlanetBinary& bynaus(void);

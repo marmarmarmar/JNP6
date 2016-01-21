@@ -1,5 +1,3 @@
-#include <vector>
-
 class PlanetInterface {
 
   public :
@@ -7,10 +5,10 @@ class PlanetInterface {
   typedef long long CitizenID;
 
   virtual ~Planet(void) = 0; 
-  virtual const Citizen& registerCitizen(const std::string&);
-  virtual const Citizen& findCitizen(const CitizenID&) const;
+  virtual const Citizen& registerCitizen(const std::string&) = 0;
+  virtual const Citizen& findCitizen(const CitizenID&) const = 0;
 
-  private:
+  protected:
 
   static Citizen_ID currently_checked_id = 0;
 };

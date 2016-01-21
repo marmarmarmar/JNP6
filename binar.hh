@@ -2,5 +2,8 @@
 
 class Binar : public Citizen {
   public:
-  Binar(const Binar&, const Binar&);
+  Binar(
+      const CitizenID&,
+      const Binar&, 
+      const Binar&);
 };

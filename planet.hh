@@ -1,4 +1,4 @@
-#include "planet.hh"
+#include "planetinterface.hh"
 
 template <typename CitizenType>
 class Planet : public PlanetInterface {
