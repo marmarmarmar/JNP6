@@ -10,9 +10,8 @@ class PlanetInterface {
 
   public :
   
+  PlanetInterface(void) {};
   typedef long long CitizenID;
-
-  PlanetInterface(void);
   virtual ~PlanetInterface(void) = 0; 
 
   protected:

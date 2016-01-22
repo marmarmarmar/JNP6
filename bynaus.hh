@@ -1,7 +1,10 @@
+#ifndef __BYNAUS_HH__
+#define __BYNAUS_HH__
+
+#include "citizen.hh"
 #include "planet.hh"
 #include "binar.hh"
 
-Planet<Binar>& bynaus(void) {
-  Planet<Binar> *static_instance = new Planet<Binar>();
-  return *static_instance;
-}
+Planet<Binar>& bynaus(void);
+
+#endif /*__BYNAUS_HH__*/

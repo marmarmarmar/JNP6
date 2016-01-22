@@ -1,7 +1,7 @@
+#include "citizen.hh"
 #include "planetinterface.hh"
 
 PlanetInterface::~PlanetInterface(void) {
 }
 
-PlanetInterface::PlanetInterface(void) :
-  currently_checked_id(0) { };
+CitizenID PlanetInterface::currently_checked_id = 0;

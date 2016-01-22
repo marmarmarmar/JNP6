@@ -1,36 +1,22 @@
+#ifndef __CITIZENNAME_HH__
+#define __CITIZENNAME_HH__
+
 #include <iostream>
 #include <string>
 
 class CitizenName {
-  public:
-    virtual ~CitizenName(void) = 0;
-};
 
-class CitizenNameNormal : public CitizenName {
   protected:
     std::string my_name;
+    
   public:
-    ~CitizenNameNormal(void);
-    CitizenNameNormal(const std::string&);
-    CitizenNameNormal(void);
-    friend std::ostream& operator<<(
-        std::ostream&,
-        const CitizenNameNormal&);
-};
+    ~CitizenName(void) {};
+    CitizenName(void) {};
+    CitizenName(const std::string&);
+    CitizenName(const CitizenName&, const CitizenName&);
 
-class CitizenNameEmpty : public CitizenName {
-  public:
-    ~CitizenNameEmpty(void);
     friend std::ostream& operator<<(
         std::ostream&,
-        const CitizenNameEmpty&);
+        const CitizenName&);
 };
-
-class CitizenNameBinar : public CitizenNameNormal {
-  public:
-    ~CitizenNameBinar(void);
-    friend std::ostream& operator<<(
-        std::ostream&,
-        const CitizenNameBinar&);
-    CitizenNameBinar(const CitizenNameBinar&, const CitizenNameBinar&);
-};
+#endif /*__CITIZENNAME_HH__*/

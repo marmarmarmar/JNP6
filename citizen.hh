@@ -9,10 +9,12 @@ typedef PlanetInterface::CitizenID CitizenID;
 
 class Citizen {
 
-  PlanetInterface::CitizenID my_id;
+  protected:
+  CitizenID my_id;
   CitizenName my_name;
 
   public:
+  Citizen(void) {};
   virtual ~Citizen(void) = 0;
   Citizen(const CitizenID&);
   Citizen(const CitizenID&, const std::string&);

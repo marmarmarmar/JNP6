@@ -1,3 +1,4 @@
+#include "citizen.hh"
 #include "planet.hh"
 #include "human.hh"
 
